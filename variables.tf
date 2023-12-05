@@ -1,18 +1,7 @@
 variable "user_uuid" {
-  type        = string
-  description = "The UUID of the user"
-  validation {
-    condition     = can(regex("^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$", var.user_uuid))
-    error_message = "The user_uuid must be in UUID format (example: 123e4567-e89b-12d3-a456-426614174000)."
-  }
+ type = string
 }
 
 variable "bucket_name" {
-  description = "The name of the S3 bucket"
-  type        = string
-
-  validation {
-    condition     = can(regex("^([a-z0-9]+(-[a-z0-9]+)*)(\\.[a-z0-9]+(-[a-z0-9]+)*)*$", var.bucket_name)) && length(var.bucket_name) >= 3 && length(var.bucket_name) <= 63
-    error_message = "The bucket name must be a valid S3 bucket name: lowercase letters, numbers, and hyphens, between 3 and 63 characters."
-  }
+ type = string
 }
