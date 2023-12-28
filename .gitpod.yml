@@ -11,7 +11,9 @@ tasks:
       cd $PROJECT_ROOT
       cd terratowns_mock_server
       bundle install
-      bundle exec ruby server.rb 
+      bundle exec ruby server.rb
+  - port: 4567
+    onOpen: open-preview
   - name: aws-cli
     env:
       AWS_CLI_AUTO_PROMPT: on-partial
