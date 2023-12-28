@@ -16,7 +16,7 @@ variable "bucket_name" {
     error_message = "The bucket name must be a valid S3 bucket name: lowercase letters, numbers, and hyphens, between 3 and 63 characters."
   }
 }
-/*
+
 variable "index_html_filepath" {
   description = "The file path for index.html"
   type        = string
@@ -36,4 +36,3 @@ variable "error_html_filepath" {
     error_message = "The provided path for error.html does not exist"
   }
 }
-*/
