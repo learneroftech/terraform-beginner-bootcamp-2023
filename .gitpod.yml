@@ -19,12 +19,15 @@ tasks:
       npm install --global http-server
     command:
       http-server
-  - name: Sinatra Server
+  - name: Sinatra
     before: |
       cd $PROJECT_ROOT/terratowns_mock_server
       bundle install
     init: |
-      bundle exec ruby server.rb
+      cd path/to/your/app
+      bundle install
+    command: |
+      ruby app.rb
 
 ports:
   - port: 4567
