@@ -6,6 +6,10 @@ tasks:
       source ./bin/install_terraform_cli
       source ./bin/generate_tfrc_credentials
       cp $PROJECT_ROOT/terraform.tfvars.example $PROJECT_ROOT/terraform.tfvars
+  - name: sinatra
+    init: | 
+      bundle install
+      bundle exec ruby server.rb 
   - name: aws-cli
     env:
       AWS_CLI_AUTO_PROMPT: on-partial
@@ -19,19 +23,6 @@ tasks:
       npm install --global http-server
     command:
       http-server
-  - name: Sinatra
-    before: |
-      cd $PROJECT_ROOT/terratowns_mock_server
-      bundle install
-    init: |
-      cd path/to/your/app
-      bundle install
-    command: |
-      ruby app.rb
-
-ports:
-  - port: 4567
-    visibility: public
 
 vscode:
   extensions:
