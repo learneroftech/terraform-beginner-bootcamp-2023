@@ -31,8 +31,6 @@ tasks:
 
 ports:
   - port: 4567
-    onOpen: open-preview
-
 
 vscode:
   extensions:
