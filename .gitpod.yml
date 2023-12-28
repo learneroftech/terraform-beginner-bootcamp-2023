@@ -1,4 +1,8 @@
 tasks:
+  - name: sinatra
+    init: | 
+      bundle install
+      bundle exec ruby server.rb 
   - name: terraform
     before: |
       source ./bin/set_tf_alias
@@ -11,10 +15,6 @@ tasks:
     before: |
       source ./bin/set_tf_alias
       source ./bin/install_aws_cli
-  - name: sinatra
-    init: | 
-      bundle install
-      bundle exec ruby server.rb 
   - name: http-server
     before: |
       npm install --global http-server
