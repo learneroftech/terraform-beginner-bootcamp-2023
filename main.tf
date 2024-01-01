@@ -1,10 +1,12 @@
 terraform {
   required_providers {
     terratowns = {
-      source = "local.providers/local/terratowns"
+      source  = "local/providers/terratowns"
       version = "1.0.0"
     }
   }
+
+  
   #backend "remote" {
   #  hostname = "app.terraform.io"
   #  organization = "testtf-organization"
