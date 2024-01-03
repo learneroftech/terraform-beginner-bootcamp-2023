@@ -45,24 +45,24 @@ show you how to play arcanum without spoiling the plot.
 DESCRIPTION
   domain_name = module.home_arcanum_hosting.domain_name
   town = "missingo"
-  content_version = 1
+  content_version = var.arcanum.content_version
 }
 
-#module "home_pho_hosting" {
-#  source = "./modules/terrahome_aws"
-#  user_uuid = var.teacherseat_user_uuid
-#  public_path = var.pho.public_path
-#  content_version = var.pho.content_version
-#}
-#
-#resource "terratowns_home" "home_pho" {
-#  name = "Making your Pho"
-#  description = <<DESCRIPTION
-#Since I really like Pho, I want to cook it myself!
-#Pho is one of the most popular Vietnamese entrees, and
-#you should make it yourself! Then you could truly say it's "Pho me!"
-#DESCRIPTION
-#  domain_name = module.home_pho_hosting.domain_name
-#  town = "missingo"
-#  content_version = 1
-#}
+module "home_pho_hosting" {
+  source = "./modules/terrahome_aws"
+  user_uuid = var.teacherseat_user_uuid
+  public_path = var.pho.public_path
+  content_version = var.pho.content_version
+}
+
+resource "terratowns_home" "home_pho" {
+  name = "Making your Pho"
+  description = <<DESCRIPTION
+Since I really like Pho, I want to cook it myself!
+Pho is one of the most popular Vietnamese entrees, and
+you should make it yourself! Then you could truly say it's "Pho me!"
+DESCRIPTION
+  domain_name = module.home_pho_hosting.domain_name
+  town = "missingo"
+  content_version = var.pho.content_version
+}
