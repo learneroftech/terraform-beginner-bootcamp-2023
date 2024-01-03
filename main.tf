@@ -31,8 +31,8 @@ provider "terratowns" {
 module "home_arcanum_hosting" {
   source = "./modules/terrahome_aws"
   user_uuid = var.teacherseat_user_uuid
-  public_path = var.arcanum_public_path
-  content_version = var.content_version
+  public_path = var.arcanum.public_path
+  content_version = var.arcanum.content_version
 }
 
 resource "terratowns_home" "home" {
@@ -52,7 +52,7 @@ DESCRIPTION
 #  source = "./modules/terrahome_aws"
 #  user_uuid = var.teacherseat_user_uuid
 #  public_path = var.pho.public_path
-#  content_version = var.content_version
+#  content_version = var.pho.content_version
 #}
 #
 #resource "terratowns_home" "home_pho" {

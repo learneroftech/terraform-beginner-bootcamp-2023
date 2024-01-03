@@ -10,14 +10,16 @@ variable "teacherseat_user_uuid" {
  type = string
 }
 
-variable "arcanum_public_path" {
-  type = string
+variable "arcanum" {
+  type = object({
+    public_path = string
+    content_version = number
+  })
 }
 
-#variable "pho_public_path" {
-# type = string
-#}
-
-variable "content_version" {
- type = number
+variable "pho" {
+  type = object({
+    public_path = string
+    content_version = number
+  })
 }
