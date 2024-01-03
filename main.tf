@@ -63,6 +63,6 @@ Pho is one of the most popular Vietnamese entrees, and
 you should make it yourself! Then you could truly say it's "Pho me!"
 DESCRIPTION
   domain_name = module.home_pho_hosting.domain_name
-  town = "missingo"
+  town = "cooker-cove"
   content_version = var.pho.content_version
 }
