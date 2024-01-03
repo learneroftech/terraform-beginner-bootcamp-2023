@@ -5,7 +5,7 @@ terraform {
       version = "1.0.0"
     }
   }
-  #backend "remote" {
+    #backend "remote" {
   #  hostname = "app.terraform.io"
   #  organization = "testtf-organization"
 
@@ -31,28 +31,28 @@ provider "terratowns" {
 module "home_arcanum_hosting" {
   source = "./modules/terrahome_aws"
   user_uuid = var.teacherseat_user_uuid
-  public_path = var.arcanum.public_path
-  content_version = var.arcanum.content_version
+  public_path = var.arcanum_public_path
+  content_version = var.content_version
 }
 
 resource "terratowns_home" "home" {
   name = "How to play Arcanum in 2023!"
   description = <<DESCRIPTION
-Arcanum is a game from 2001 that shipped with alot of bugs.
+Arcanum is a game from 2001 that shipped with a lot of bugs.
 Modders have removed all the originals making this game really fun
 to play (despite that old look graphics). This is my guide that will
 show you how to play arcanum without spoiling the plot.
 DESCRIPTION
   domain_name = module.home_arcanum_hosting.domain_name
   town = "missingo"
-  content_version = var.arcanum.content_version
+  content_version = 1
 }
 
 #module "home_pho_hosting" {
 #  source = "./modules/terrahome_aws"
 #  user_uuid = var.teacherseat_user_uuid
 #  public_path = var.pho.public_path
-#  content_version = var.pho.content_version
+#  content_version = var.content_version
 #}
 #
 #resource "terratowns_home" "home_pho" {
@@ -64,5 +64,5 @@ DESCRIPTION
 #DESCRIPTION
 #  domain_name = module.home_pho_hosting.domain_name
 #  town = "missingo"
-#  content_version = var.pho.content_version
+#  content_version = 1
 #}
